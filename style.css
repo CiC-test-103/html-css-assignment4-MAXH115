@@ -6,48 +6,246 @@
   Source: https://www.joshwcomeau.com/css/custom-css-reset/
 **/
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
 /* 2. Remove default margin */
 * {
   margin: 0;
 }
+
 body {
   /* 3. Add accessible line-height */
   line-height: 1.5;
   /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
 }
+
 /* 5. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
+
 /* 6. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
+
 /* 7. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
+
 /* 8. Improve line wrapping */
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
+
 /*
   9. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
 /** Your CSS Below **/
+body {
+  font-family: var(--fs-base);
+  font-size: var(--fw-regular);
+  background-color: var(--clr-paleBlue);
+  max-width: var(--width-desktop);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--clr-white);
+  border-radius: 25px;
+  width: 50%;
+  height: 500px;
+  box-shadow: 0px 4px 8px var(--clr-lightLavender);
+  overflow: hidden;
+  margin: auto;
+}
+
+
+.left {
+  background-image: linear-gradient(var(--gra-lightSlateBlue), var(--gra-lightRoyalBlue));
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  border-radius: 25px;
+  color: var(--clr-white);
+}
+
+.left>h3 {
+  margin-top: 40px;
+  font-weight: var(--fw-bold);
+  font-size: 1.5rem;
+  color: var(--clr-lightLavender);
+}
+
+.score {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: linear-gradient(var(--gra-violetBlue), var(--gra-persianBlue));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: var(--fw-bold);
+  margin: 15px;
+}
+
+h1 {
+  font-weight: var(--fw-black);
+  font-size: 80px;
+  margin-top: 30px;
+}
+
+p {
+  font-size: var(--font-paragraph);
+  color: var(--clr-lightLavender);
+  margin: 0 30px 0 30px;
+  padding: 20px;
+}
+
+.score p {
+  margin-top: -40px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.right {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right h3 {
+  font-weight: var(--fw-bold);
+  font-size: 1.5rem;
+  color: var(--clr-darkGrayBlue);
+  margin: 0 20px 30px;
+}
+
+.summary-item {
+  display: flex;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  margin: 0 1rem 1rem;
+  gap: 15px;
+  /* justify-content: space-between; */
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.numbers {
+  justify-self: end;
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+  text-align: right;
+  flex-grow: 1;
+}
+
+.reaction {
+  background: #fff7f7;
+  color: var(--clr-lightRed);
+}
+
+.memory {
+  background: #fffaf4;
+  color: var(--clr-orangeYellow);
+}
+
+.verbal {
+  background: #f2fdf9;
+  color: var(--clr-greenTeal);
+}
+
+.visual {
+  background: #f4f4fe;
+  color: var(--clr-cobaltBlue);
+}
+
+.numbers-bold {
+  color: var(--clr-darkGrayBlue);
+  justify-content: right;
+}
+
+.numbers-grey {
+  color: var(--clr-lightLavender);
+}
+
+button {
+  padding: 15px 20px;
+  background-color: var(--clr-darkGrayBlue);
+  color: var(--clr-lightLavender);
+  font-weight: var(--fw-bold);
+  border-radius: 30px;
+  width: 90%;
+  align-self: center;
+  margin-top: 10px;
+}
+
+.continue-button:hover {
+  background-color: #0056b3;
+}
+
+
 
 /** Attribution CSS **/
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
